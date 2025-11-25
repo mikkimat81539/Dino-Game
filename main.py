@@ -6,6 +6,8 @@ pygame.init()
 screen = pygame.display.set_mode((500, 250))
 pygame.display.set_caption("DINO GAME")
 
+# PLAYER
+
 # Game Loop
 while True:
     for event in pygame.event.get():
