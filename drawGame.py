@@ -14,14 +14,14 @@ class gamePlayDraw_Squares:
     def draw_rect(self, screen):
         return pygame.draw.rect(screen, self.color, self.get_rect)
 
-class gamePlayDraw_Triange:
-    def __init__(self, Lx_pos, Ly_pos, Tx_pos, Ty_pos, Rx_pos, Ry_pos, color):
+class gamePlayDraw_Trianges:
+    def __init__(self, Lx_pos, Ly_pos, Rx_pos, Ry_pos, color):
         self.Lx_pos = Lx_pos # Left part of triange on X axis
         self.Ly_pos = Ly_pos # Left part of triange on Y axis
-        self.Tx_pos = Tx_pos # Top part of triange on X axis
-        self.Ty_pos = Ty_pos # Top part of triange on Y axis
         self.Rx_pos = Rx_pos # Right part of triange on X axis
         self.Ry_pos = Ry_pos # Right part of triange on Y axis
+        self.Tx_pos = (Lx_pos + Rx_pos) // 2 # Top part of triange on X axis
+        self.Ty_pos = 190 # Top part of triange on Y axis
         self.set_points = [(self.Lx_pos, self.Ly_pos), (self.Tx_pos, self.Ty_pos), (self.Rx_pos, self.Ry_pos)]
         self.color = str(color)
     
