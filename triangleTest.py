@@ -16,7 +16,9 @@ platform = gamePlayDraw_Squares(0, 220, 500, 30, "gray")
 # ENEMIES
 
 # 190 is the the line that top point should not pass
-redTriangle = gamePlayDraw_Trianges(460, 220, 490, 220,"black")
+init_Triangle = gamePlayDraw_Trianges(460, 220, 490, 220,"black")  # this will be the starting triangle
+
+random_Triangle = gamePlayDraw_Trianges(random.randint(390, 420), 220, random.randint(425, 450), 220, "red")
 
 # Physics
 speed = 5
@@ -37,7 +39,8 @@ while running:
 
     # Render Code here
     platform.draw_rect(screen)
-    redTriangle.draw_polygon(screen)
+    init_Triangle.draw_polygon(screen)
+    random_Triangle.draw_polygon(screen)
     
     pygame.display.flip()
     
