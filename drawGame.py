@@ -22,8 +22,17 @@ class gamePlayDraw_Trianges:
         self.Ry_pos = Ry_pos # Right part of triange on Y axis
         self.Tx_pos = (Lx_pos + Rx_pos) // 2 # Top part of triange on X axis
         self.Ty_pos = 190 # Top part of triange on Y axis
-        self.set_points = [(self.Lx_pos, self.Ly_pos), (self.Tx_pos, self.Ty_pos), (self.Rx_pos, self.Ry_pos)]
+        self.set_points = [[self.Lx_pos, self.Ly_pos], [self.Tx_pos, self.Ty_pos], [self.Rx_pos, self.Ry_pos]]
         self.color = str(color)
     
     def draw_polygon(self, screen):
         return pygame.draw.polygon(screen, self.color, self.set_points)
+
+    def updateTriangle(self, speed):
+        # Move X coordinates only
+        self.Lx_pos -= speed
+        self.Tx_pos -= speed
+        self.Rx_pos -= speed
+
+        # Rebuild triangle points
+        self.set_points = [[self.Lx_pos, self.Ly_pos], [self.Tx_pos, self.Ty_pos], [self.Rx_pos, self.Ry_pos]]

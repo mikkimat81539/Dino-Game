@@ -16,9 +16,9 @@ platform = gamePlayDraw_Squares(0, 220, 500, 30, "gray")
 # ENEMIES
 
 # 190 is the the line that top point should not pass
-init_Triangle = gamePlayDraw_Trianges(460, 220, 490, 220,"black")  # this will be the starting triangle
+init_Triangle = gamePlayDraw_Trianges(400, 220, 430, 220,"black")  # this will be the starting triangle
 
-random_Triangle = gamePlayDraw_Trianges(random.randint(390, 420), 220, random.randint(425, 450), 220, "red")
+random_Triangle = gamePlayDraw_Trianges(random.randint(460, 490), 220, random.randint(480, 495), 220, "red")
 
 # Physics
 speed = 5
@@ -33,7 +33,11 @@ while running:
         if event.type == pygame.MOUSEBUTTONDOWN:
             mouse = pygame.mouse.get_pos()
             print(mouse)    
-    
+
+
+    init_Triangle.updateTriangle(speed)
+
+    random_Triangle.updateTriangle(speed)
 
     screen.fill("white")
 
